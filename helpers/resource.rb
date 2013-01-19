@@ -26,6 +26,10 @@ module Massr
 				'削除'
 			end
 
+			def _clearres
+				'新着レスクリア'
+			end
+
 			def _res
 				'レス'
 			end
@@ -68,6 +72,18 @@ module Massr
 
 			def _unauth_count(num)
 				"未認証ユーザが#{num}人います"
+			end
+
+			def _response_count(num)
+				"新着レスが#{num}個あります"
+			end
+
+			def _delete_button
+				'×'
+			end
+
+			def _user_info_update
+				"アプリケーション更新に伴い、ユーザ情報の再登録をします"
 			end
 		end
 	end

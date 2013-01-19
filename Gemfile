@@ -12,6 +12,8 @@ gem 'bson_ext'
 gem 'rack_csrf'
 gem 'mail'
 gem 'picasa'
+gem 'rack-session-mongo'
+gem 'dalli'
 
 group :development, :test do
 	gem 'rake'

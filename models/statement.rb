@@ -56,17 +56,23 @@ module Massr
 				end
 			end
 
+			user = request[:user]
+			self.user  = user
+
 			if request[:res_id]
 				res_statement  = Statement.find_by_id(request[:res_id])
 				res_statement.refs << self
 				self.res   = res_statement
+				
+				res_statement.user.ress << self
 			end
 
-			user = request[:user]
-			self.user  = user
 
 			if save!
-				res_statement.save! if request[:res_id]
+				if request[:res_id]
+					res_statement.save!
+					res_statement.user.save!
+				end
 			end
 
 			return self
@@ -77,6 +83,7 @@ module Massr
 		end
 
 		def to_hash
+			res = Statement.find_by_id(res_id)
 			{
 				'id' => id,
 				'created_at' => created_at.localtime.strftime('%Y-%m-%d %H:%M:%S'),
@@ -84,7 +91,7 @@ module Massr
 				'user' => user.to_hash,
 				'likes' => likes.map{|l| l.to_hash},
 				'ref_ids' => ref_ids,
-				'res' => res_id ? Statement.find_by_id(res_id).to_hash : nil,
+				'res' => res ? res.to_hash : nil,
 				'photos' => photos
 			}
 		end

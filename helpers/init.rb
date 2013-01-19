@@ -55,6 +55,11 @@ module Massr
 			def param_date
 				date = params[:date] ? params[:date] : (Time.now + 1).strftime("%Y%m%d%H%M%S")
 			end
+
+			#for mamcached
+			def clear_cache
+				settings.cache.flush_all
+			end
 		end
 	end
 end
