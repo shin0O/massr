@@ -177,11 +177,14 @@ div.statement {
 	padding: 4px 2px 0px 2px;
 }
 
+<<<<<<< HEAD
+=======
 div.statement-new {
 	border-width: 1px 0px 0px 3px;
 	border-color: #eee #06f;
 }
 
+>>>>>>> f7b3927682a60b4b1c56214ab1c9f057cf0e8664
 div.item {
 	width: 100px;
 	margin: 3px;

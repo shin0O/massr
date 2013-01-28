@@ -193,10 +193,13 @@ $(function(){
 		);
 	};
 
+<<<<<<< HEAD
+=======
 	function getNewestTime(){
 		return $($('#statements .statement .statement-info a').get(1)).text().replace(/^\s*(.*?)\s*$/, "$1");
 	}
 
+>>>>>>> f7b3927682a60b4b1c56214ab1c9f057cf0e8664
 	// reload diff of recent statements
 	function reloadDiff(){
 		if(location.pathname == '/' && location.search == ''){
@@ -453,8 +456,13 @@ $(function(){
 			url: link,
 			type: 'GET',
 			dataType: 'json',
+<<<<<<< HEAD
+			cache: false,
+			success: function(json) {
+=======
 			cache: false}).
 		done(function(json) {
+>>>>>>> f7b3927682a60b4b1c56214ab1c9f057cf0e8664
 				var idname = (/.*photos$/.test(location.pathname))? '#items':'#statements'
 				$(idname).each(function(){
 					var $div = $(this);
@@ -481,7 +489,13 @@ $(function(){
 				if($('textarea:focus').length == 0){
 					location.reload();
 				}
+<<<<<<< HEAD
+			}
+		});
+		
+=======
 			});
+>>>>>>> f7b3927682a60b4b1c56214ab1c9f057cf0e8664
 	});
 
 	/*
